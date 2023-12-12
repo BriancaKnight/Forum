@@ -6,17 +6,24 @@ function NoteList(props) {
 
   return (
     <React.Fragment>
+     {Object.values(props.noteList).map((note) =>
       <Note
-        text="Hi there!"
-        author="Zuri"
-        upvotes="1000"
-        downvotes="0" />
+      whenNoteClicked = {props.onNoteSelection}
+        text={note.text}
+        author={note.author}
+        upvotes={note.upvotes}
+        downvotes={note.downvotes}
+        timestamp={note.timestamp} 
+        id={note.id}
+        key={note.id}/>
+     )}
     </React.Fragment>
   );
 }
 
 NoteList.propTypes = {
- noteList: PropTypes.object
+ noteList: PropTypes.object,
+ onNoteSelection: PropTypes.func
 };
 
 export default NoteList;

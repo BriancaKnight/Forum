@@ -3,6 +3,7 @@ import NewNoteForm from './NewNoteForm';
 import NoteList from './NoteList';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import ReusableButton from './ReusableButton';
 
 class NoteControl extends React.Component {
 
@@ -51,10 +52,16 @@ handleDeletingNote = (id)  => {
   this.setState();
 }
 
+handleChangingSelectedNote = (id) => {
+  const selectedNote = this.props.mainNoteList[id];
+  this.setState({ selectedNote: selectedNote });
+}
+
   render() {
     return (
       <React.Fragment>
-        <NoteList />
+        <NoteList noteList={this.props.mainNoteList}/>
+        <ReusableButton onClick={this.handleClick} buttonText="Add a Note" />
         </React.Fragment>
     );
   }
