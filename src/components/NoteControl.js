@@ -2,6 +2,7 @@ import React from 'react';
 import NewNoteForm from './NewNoteForm';
 import NoteList from './NoteList';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class NoteControl extends React.Component {
 
@@ -59,6 +60,17 @@ handleDeletingNote = (id)  => {
   }
 }
 
-NoteControl = connect()(NoteControl);
+NoteControl.propTypes = {
+  mainNoteList: PropTypes.object,
+
+};
+
+const mapStateToProps = state => {
+  return {
+    mainNoteList: state
+  }
+}
+
+NoteControl = connect(mapStateToProps)(NoteControl);
 
 export default NoteControl;

@@ -13,6 +13,7 @@ function NewNoteForm(props) {
       author: event.target.author.value,
       upvote: '0',
       downvote: '0',
+      timestamp: event.target.timestamp.value,
       id: v4()
     })
   }
