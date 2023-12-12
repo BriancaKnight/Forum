@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from './Header';
-import NoteList from './NoteList';
+import NoteControl from './NoteControl';
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <NoteList />
+      <NoteControl />
     </React.Fragment>
 
   );

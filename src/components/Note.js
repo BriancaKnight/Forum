@@ -13,8 +13,8 @@ function Note(props) {
 Note.propTypes = {
   text: PropTypes.string,
   author: PropTypes.string,
-  upvotes: PropTypes.number,
-  downvotes: PropTypes.number
+  upvotes: PropTypes.string,
+  downvotes: PropTypes.string
 }
 
 export default Note;

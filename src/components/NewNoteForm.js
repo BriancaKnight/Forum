@@ -11,6 +11,8 @@ function NewNoteForm(props) {
     props.onNewNoteCreation({
       text: event.target.text.value,
       author: event.target.author.value,
+      upvote: '0',
+      downvote: '0',
       id: v4()
     })
   }
