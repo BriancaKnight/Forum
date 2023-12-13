@@ -4,8 +4,9 @@ import NoteControl from './NoteControl';
 // import { store } from './app/store';
 // import { Provider } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { noteSelector } from './redux/noteSlice';
+import { noteSelector } from '../redux/noteSlice';
 import { formVisibilitySelector } from '../redux/formVisibleSlice';
+import { selectedNoteSelector } from '../redux/selectedNoteSlice';
 
 function App() {
   const notes = useSelector(noteSelector);

@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
 
 function ReusableButton({ onClick, buttonText}) {
   return (
@@ -7,9 +8,9 @@ function ReusableButton({ onClick, buttonText}) {
   );
 }
 
-ReusableButton.propTypes = {
-  onClick: PropTypes.func,
-  buttonText: PropTypes.string
-};
+// ReusableButton.propTypes = {
+//   onClick: PropTypes.func,
+//   buttonText: PropTypes.string
+// };
 
 export default ReusableButton;

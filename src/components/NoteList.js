@@ -1,29 +1,28 @@
 import React from 'react';
 import Note from './Note';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from "react-redux";
+import { noteSelector } from '../redux/noteSlice';
 
-function NoteList(props) {
+function NoteList() {
+  const noteList = useSelector(state => state.note);
+  const dispatch = useDispatch();
 
   return (
     <React.Fragment>
-     {Object.values(props.noteList).map((note) =>
+     {Object.values(noteList).map((note) =>
       <Note
-      whenNoteClicked = {props.onNoteSelection}
+      key={note.id}
         text={note.text}
         author={note.author}
         upvotes={note.upvotes}
         downvotes={note.downvotes}
-        timestamp={note.timestamp} 
-        id={note.id}
-        key={note.id}/>
+        // timestamp={note.timestamp} 
+        // id={note.id}
+        onClick={() => dispatch(noteSelector)}
+     />
      )}
     </React.Fragment>
   );
 }
-
-NoteList.propTypes = {
- noteList: PropTypes.object,
- onNoteSelection: PropTypes.func
-};
 
 export default NoteList;

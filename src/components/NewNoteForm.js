@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addNote } from "../../redux/noteSlice";
+import { addNote } from "../redux/noteSlice";
 
 
 export default function NewNoteForm() {
