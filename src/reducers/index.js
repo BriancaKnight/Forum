@@ -5,7 +5,6 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
     formVisibleOnPage: formVisibleReducer,
     mainNoteList: noteListReducer
-
 });
 
 export default rootReducer;
