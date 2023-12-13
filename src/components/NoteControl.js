@@ -4,6 +4,9 @@ import NoteList from './NoteList';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReusableButton from './ReusableButton';
+import { useDispatch } from "react-redux";
+import { addNote } from '../../redux/noteSlice';
+import { toggleForm } from '../redux/formVisibleSlice';
 
 class NoteControl extends React.Component {
 
@@ -31,21 +34,10 @@ class NoteControl extends React.Component {
   // }
 
   handleAddingNewNote = (newNote) => {
-    const { dispatch } = this.props;
+    const dispatch = useDispatch();
     const { text, author, upvotes, downvotes, id } = newNote;
-    const action = {
-      type: 'ADD_NOTE',
-      text: text,
-      author: author,
-      upvotes: upvotes,
-      downvotes: downvotes,
-      id: id
-    }
-    dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
-    dispatch(action2);
+    dispatch(addNote(newNote));
+    dispatch(toggleForm());
   }
 
   handleEditingNewNote = (editedNote) => {

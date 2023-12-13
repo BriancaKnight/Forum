@@ -5,9 +5,14 @@ import NoteControl from './NoteControl';
 // import { Provider } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { noteSelector } from './redux/noteSlice';
+import { formVisibilitySelector } from '../redux/formVisibleSlice';
 
 function App() {
   const notes = useSelector(noteSelector);
+  const formVisibility = useSelector(formVisibilitySelector);
+  const selectedNote = useSelector(selectedNoteSelector);
+
+  
   return (
     <React.Fragment>
       <Header />
