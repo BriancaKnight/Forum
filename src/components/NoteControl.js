@@ -10,25 +10,25 @@ class NoteControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedNote: null,
+      // selectedNote: null,
       // editing: false
     };
   }
 
-  handleClick = () => {
-    if (this.state.selectedNote != null) {
-      this.setState({
-        selectedNote: null,
-        // editing: false
-      });
-    } else {
-      const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
-      dispatch(action);
-    }
-  }
+  // handleClick = () => {
+  //   if (this.state.selectedNote != null) {
+  //     this.setState({
+  //       // selectedNote: null,
+  //       // editing: false
+  //     });
+  //   } else {
+  //     const { dispatch } = this.props;
+  //     const action = {
+  //       type: 'TOGGLE_FORM'
+  //     }
+  //     dispatch(action);
+  //   }
+  // }
 
   handleAddingNewNote = (newNote) => {
     const { dispatch } = this.props;
