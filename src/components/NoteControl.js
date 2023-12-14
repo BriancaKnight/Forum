@@ -19,17 +19,17 @@ function NoteControl() {
     dispatch(toggleForm());
   };
 
-  const handleEditingNewNote = (editedNote) => {
-    const { text, author, upvotes, downvotes, id } = editedNote;
-    dispatch(addNote(editedNote));
-    dispatch(toggleForm());
-  };
+  // const handleEditingNewNote = (editedNote) => {
+  //   const { text, author, upvotes, downvotes, id } = editedNote;
+  //   dispatch(addNote(editedNote));
+  //   dispatch(toggleForm());
+  // };
 
-  const handleDeletingNote = (deletedNote) => {
-    const { id } = deletedNote;
-    dispatch(deleteNote(deletedNote));
-    dispatch(toggleForm());
-  };
+  // const handleDeletingNote = (deletedNote) => {
+  //   const { id } = deletedNote;
+  //   dispatch(deleteNote(deletedNote));
+  //   dispatch(toggleForm());
+  // };
 
   const handleChangingSelectedNote = (selectedNote) => {
     const { text, author, upvotes, downvotes, id } = selectedNote;

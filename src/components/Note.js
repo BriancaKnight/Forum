@@ -1,30 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector} from 'react-redux';
 
-function Note(props) {
-  const date = new Date();
-  const timestamp = date.toLocaleString('en-US', {
-  month: 'numeric',
-  day: 'numeric',
-  year: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  hour12: true,
-  });
+function Note() {
+  const note = useSelector(state => state.note);
 
   return (
     <React.Fragment>
-      <h3> {props.text}{props.author}{props.upvotes}{props.downvotes}{timestamp}</h3>
+      <h3> {note.text}{note.author}{note.upvotes}{note.downvotes}</h3>
     </React.Fragment>
   )
 }
 
-Note.propTypes = {
-  text: PropTypes.string,
-  author: PropTypes.string,
-  upvotes: PropTypes.string,
-  downvotes: PropTypes.string,
-  timestamp: PropTypes.object
-}
-
 export default Note;
+
+// const date = new Date();
+// const timestamp = date.toLocaleString('en-US', {
+// month: 'numeric',
+// day: 'numeric',
+// year: 'numeric',
+// hour: 'numeric',
+// minute: 'numeric',
+// hour12: true,
+// });
