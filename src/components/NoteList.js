@@ -4,20 +4,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { noteSelector } from '../redux/noteSlice';
 
 function NoteList() {
-  const noteList = useSelector(state => state.note);
+  const noteList = useSelector((state) => state.notes);
   const dispatch = useDispatch();
 
   return (
     <React.Fragment>
-     {Object.values(noteList).map((note) =>
+     {noteList.map((noteList) =>
       <Note
-      key={note.id}
-        text={note.text}
-        author={note.author}
-        upvotes={note.upvotes}
-        downvotes={note.downvotes}
+      key={noteList.id}
+        text={noteList.text}
+        author={noteList.author}
+        upvotes={noteList.upvotes}
+        downvotes={noteList.downvotes}
         // timestamp={note.timestamp} 
-        // id={note.id}
+        id={noteList.id}
         onClick={() => dispatch(noteSelector)}
      />
      )}

@@ -10,7 +10,6 @@ function App() {
   const notes = useSelector(noteSelector);
   const formVisibility = useSelector(formVisibilitySelector);
   const selectedNote = useSelector(selectedNoteSelector);
-
   
   return (
     <React.Fragment>

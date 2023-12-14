@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = false;
 
 const formVisibleSlice = createSlice ({
     name: 'formVisibility',
-    initialState: false,
+    initialState: initialState,
     reducers: {
         toggleForm: state => !state,
         },

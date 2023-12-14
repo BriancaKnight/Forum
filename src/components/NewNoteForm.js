@@ -15,7 +15,7 @@ const dispatch = useDispatch();
       author: e.target.author.value,
       upvote: parseInt(0),
       downvote: parseInt(0),
-      timestamp: e.target.timestamp.value,
+      // timestamp: e.target.timestamp.value,
       id: v4()
     }
   dispatch(addNote(newNote));

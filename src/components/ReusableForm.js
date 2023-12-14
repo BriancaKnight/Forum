@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addNote } from '../redux/noteSlice';
+import {v4} from 'uuid';
 
 function ReusableForm() {
   const dispatch = useDispatch();
@@ -13,10 +14,10 @@ function ReusableForm() {
       author: e.target.author.value,
       upvote: parseInt(0),
       downvote: parseInt(0),
-      timestamp: e.target.timestamp.value,
+      // timestamp: e.target.timestamp.value,
       id: v4()
     }
-    dispatch(addNote(note));
+    dispatch(addNote(newNote));
   }
 
   return (
