@@ -18,6 +18,8 @@ function ReusableForm() {
       id: v4()
     }
     dispatch(addNote(newNote));
+    console.log("Added New Note")
+    
   }
 
   return (
@@ -33,6 +35,7 @@ function ReusableForm() {
           placeholder='Written by:' />
         <button type='submit'>Send Note</button>
       </form>
+  
     </React.Fragment>
   );
 }

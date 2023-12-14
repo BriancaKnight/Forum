@@ -9,18 +9,19 @@ function NoteList() {
 
   return (
     <React.Fragment>
-     {noteList.map((noteList) =>
-      <Note
-      key={noteList.id}
-        text={noteList.text}
-        author={noteList.author}
-        upvotes={noteList.upvotes}
-        downvotes={noteList.downvotes}
-        // timestamp={note.timestamp} 
-        id={noteList.id}
-        onClick={() => dispatch(noteSelector)}
-     />
-     )}
+      <h1> Note List </h1>
+      <ul>
+     {noteList.map((noteList) => (
+      <li key={noteList.id}>
+        Note:{noteList.text} 
+        <br/>
+        By: {noteList.author}
+        <br/>
+        <em>{noteList.upvotes} upvotes & {noteList.downvotes} downvotes</em>
+        {/* // timestamp={note.timestamp}  */}
+        </li>
+     ))}
+     </ul>
     </React.Fragment>
   );
 }

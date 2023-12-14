@@ -10,7 +10,7 @@ import { toggleForm } from '../redux/formVisibleSlice';
 function NoteControl() {
   const dispatch = useDispatch();
   const formVisibility = useSelector((state) => state.formVisibility)
-  const mainNoteList = useSelector(state => state.mainNoteList)
+  const mainNoteList = useSelector(state => state.noteList)
 
   const handleAddingNewNote = (newNote) => {
     dispatch(toggleForm());

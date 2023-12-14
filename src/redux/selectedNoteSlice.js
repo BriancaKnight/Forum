@@ -1,18 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = []
+const initialState = false; 
 
 const selectorSlice = createSlice({
   name: 'selectedNote',
   initialState: initialState,
   reducers: {
-    selectNote: (state, action) => {
-      state.push(action.payload);
-    },
+    selectNote: (state) => !state,
   },
 });
 
-export default selectorSlice.reducer;
-export const { selectNote } = selectorSlice.actions;
-export const selectedNoteSelector = (state) => state.selectedNote;
 
+export default selectorSlice.reducer;
+export const { selectNote, } = selectorSlice.actions;
+export const selectedNoteSelector = (state) => state.selectedNote;

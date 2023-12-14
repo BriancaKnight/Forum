@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addNote } from "../redux/noteSlice";
 
 
+
 export default function NewNoteForm() {
 const dispatch = useDispatch();
 
@@ -24,7 +25,6 @@ const dispatch = useDispatch();
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleNewFormSubmission} />
-      <h3>This is a new note form</h3>
     </React.Fragment>
   );
 }
