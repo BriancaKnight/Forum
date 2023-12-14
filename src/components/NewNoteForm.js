@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { addNote } from "../redux/noteSlice";
 
 
-
 export default function NewNoteForm() {
 const dispatch = useDispatch();
 
