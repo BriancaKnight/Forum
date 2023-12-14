@@ -1,9 +1,6 @@
 import React from 'react';
-// import NewNoteForm from './NewNoteForm';
 import NoteList from './NoteList';
-import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
-import ReusableButton from './ReusableButton';
+// import { connect } from 'react-redux';
 import { useSelector, useDispatch } from "react-redux";
 import { addNote, deleteNote } from '../redux/noteSlice';
 import { toggleForm } from '../redux/formVisibleSlice';
@@ -19,6 +16,21 @@ function NoteControl() {
     dispatch(toggleForm());
   };
 
+  const handleChangingSelectedNote = (selectedNote) => {
+    const { text, author, upvotes, downvotes, id } = selectedNote;
+    dispatch(selectNote(selectedNote));
+  };
+
+  return (
+    <React.Fragment>
+      <NoteList noteList={mainNoteList} />
+    </React.Fragment>
+  );
+}
+
+export default NoteControl;
+
+
   // const handleEditingNewNote = (editedNote) => {
   //   const { text, author, upvotes, downvotes, id } = editedNote;
   //   dispatch(addNote(editedNote));
@@ -30,56 +42,3 @@ function NoteControl() {
   //   dispatch(deleteNote(deletedNote));
   //   dispatch(toggleForm());
   // };
-
-  const handleChangingSelectedNote = (selectedNote) => {
-    const { text, author, upvotes, downvotes, id } = selectedNote;
-    dispatch(selectNote(selectedNote));
-  };
-
-  return (
-    <React.Fragment>
-      <NoteList noteList={mainNoteList} />
-      <ReusableButton buttonText="Add a Note" />
-    </React.Fragment>
-  );
-}
-
-export default NoteControl;
-
-// constructor(props) {
-//   super(props);
-//   this.state = {
-// selectedNote: null,
-//     // editing: false
-//   };
-// }
-
-// handleClick = () => {
-//   if (this.state.selectedNote != null) {
-//     this.setState({
-//       // selectedNote: null,
-//       // editing: false
-//     });
-//   } else {
-//     const { dispatch } = this.props;
-//     const action = {
-//       type: 'TOGGLE_FORM'
-//     }
-//     dispatch(action);
-//   }
-// }
-
-
-// NoteControl.propTypes = {
-//   mainNoteList: PropTypes.object,
-//   formVisibleOnPage: PropTypes.bool
-// };
-
-// const mapStateToProps = state => {
-//   return {
-//     mainNoteList: state.mainNoteList,
-//     formVisibleOnPage: state.formVisibleOnPage
-//   }
-// }
-
-// NoteControl = connect(mapStateToProps)(NoteControl);

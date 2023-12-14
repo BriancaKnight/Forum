@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux';
@@ -29,9 +28,3 @@ const dispatch = useDispatch();
     </React.Fragment>
   );
 }
-
-// NewNoteForm.propTypes = {
-//   onNewNoteCreation: PropTypes.func
-// }
-
-// export default NewNoteForm;
