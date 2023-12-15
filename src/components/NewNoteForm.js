@@ -16,7 +16,8 @@ const dispatch = useDispatch();
       upvote: parseInt(0),
       downvote: parseInt(0),
       // timestamp: e.target.timestamp.value,
-      id: v4()
+      id: v4(),
+      selected: false
     }
   dispatch(addNote(newNote));
   };

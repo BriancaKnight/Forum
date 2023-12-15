@@ -16,7 +16,8 @@ const selectorSlice = createSlice({
       state.selected = !state.selected;
     },
     rememberNote: (state, action) => {
-      state = action.payload;
+      console.log(action)
+      return action.payload;
     }
   },
 });

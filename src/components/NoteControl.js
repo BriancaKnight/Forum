@@ -5,20 +5,22 @@ import NewNoteForm from './NewNoteForm';
 import { useSelector, useDispatch } from "react-redux";
 // import { addNote, deleteNote } from '../redux/noteSlice';
 import { toggleForm } from '../redux/formVisibleSlice';
-// import { selectNote } from '../redux/selectedNoteSlice';
+// import { selectNote, rememberNote } from '../redux/selectedNoteSlice';
+// import NoteDetail from './NoteDetail';
 
 function NoteControl() {
   const dispatch = useDispatch();
   const formVisibility = useSelector((state) => state.formVisibility)
-  const mainNoteList = useSelector(state => state.noteList)
+  const mainNoteList = useSelector((state) => state.noteList)
+  // const selectedNote = useSelector((state) => state.rememberNote)
 
   const handleAddingNewNote = (newNote) => {
     dispatch(toggleForm());
   };
 
-  // const handleChangingSelectedNote = (selectedNote) => {
-  //   const { text, author, upvotes, downvotes, id } = selectedNote;
-  //   dispatch(selectNote(selectedNote));
+  // const handleNoteDetails = (selectedNote) => {
+  //   dispatch(rememberNote(selectedNote));
+  //   console.log("Remembered your note!")
   // };
 
   return (
